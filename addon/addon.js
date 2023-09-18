@@ -16,6 +16,7 @@ builder.defineStreamHandler(function(args) {
 	if (args.type === 'movie') {
 		const stream = { 
 			externalUrl: `https://vidsrc.to/embed/movie/${args.id}`,
+			androidTvUrl: `intent://vidsrc.to/embed/movie/${args.id}#Intent;launchFlags=0x00800000;scheme=https;end`,
 			behaviorHints: {
 				notWebReady: true
 			}
@@ -28,6 +29,7 @@ builder.defineStreamHandler(function(args) {
 		const episode = arguments[2];
 		const stream = { 
 			externalUrl: `https://vidsrc.to/embed/tv/${imdbId}/${season}/${episode}`,
+			androidTvUrl: `intent://vidsrc.to/embed/tv/${imdbId}/${season}/${episode}#Intent;launchFlags=0x00800000;scheme=https;end`,
 			behaviorHints: {
 				notWebReady: true
 			} 
